@@ -1,0 +1,165 @@
+body{
+    background-color: #999;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: salmon;
+    font-family: sans-serif;
+  }
+
+  .tooltip{
+    position: relative;
+    padding: 5px;
+    border-radius: 5px;
+    width: 70px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    animation-duration: 3s;
+    animation-name: jump;
+    animation-iteration-count: infinite;
+    background-color: #fff;
+    color: #FA434B;
+    transition: all 1s ease;
+    pointer-events: none;
+  }
+  
+  @keyframes jump {
+    0% { 
+      transform: translateY(3px)
+    }
+    50% { 
+      transform: translateY(-15px)
+    }
+     100% { 
+      transform: translateY(3px)
+    }
+  }
+
+  .menu {
+      height: 80%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #17c0eb;
+    padding: 0px;
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.item {
+    border-top: 1px solid #18dcff;
+    overflow: hidden;
+}
+
+.btn {
+    display: block;
+    padding: 16px 20px;
+    background: #17c0eb;
+    color: white;
+    position: relative;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #17c0eb;
+    left: 20px;
+    bottom: -7px;
+    transform: rotate(45deg);
+    transition: .7s;
+}
+
+.btn i {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.smenu {
+    background: #333;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+    transition: .7s;
+}
+
+.smenu a {
+    display: block;
+    padding: 16px 26px;
+    color: white;
+    margin: 4px 0;
+    position: relative;
+    transition: .7s;
+}
+
+.smenu a::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #ffcc00;
+    left: 0;
+    top: 0;
+    transition: .7s;
+    opacity: 0;
+}
+
+.smenu a:hover::before {
+    opacity: 1;
+}
+
+.item:hover .smenu {
+    max-height: 20em;
+    transition: .7s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.middle {
+    width: 30px;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    height: 30px;
+    background: #17c0eb;
+    border-radius: 10px;
+    transition: .7s ease-in-out;
+}
+
+.middle:hover {
+    width: 220px;
+    height: 100%;
+    transition: .7s ease-in-out;
+}
+
+.middle:hover .menu {
+    opacity: 1;
+}
+
+ul {
+    padding: 0;
+}
+
+.searcher {
+    height: 25px;
+    width: 150px;
+    border: solid transparent;
+    border-radius: 7px;
+    outline: none;
+    font-weight: bold;
+}
+
+.skit {
+    display: flex;
+}
+
+.confirm {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+}
